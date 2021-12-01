@@ -1,0 +1,25 @@
+{
+  "name": "online_portfolio_generator",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Welcome to Online Portfolio Generator 👋</h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/domster4444/online_portfolio_generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/domster4444/online_portfolio_generator/issues"
+  },
+  "homepage": "https://github.com/domster4444/online_portfolio_generator#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^15.0.0",
+    "@commitlint/config-conventional": "^15.0.0",
+    "husky": "^7.0.4"
+  }
+}
