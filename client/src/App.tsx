@@ -1,9 +1,8 @@
 import React from 'react';
-import LanguageSwitcher from './library/common/components/LanguageSwitcher';
-
-//? translation lib
 import { useTranslation } from 'react-i18next';
-const App = () => {
+import LanguageSwitcher from './library/common/components/LanguageSwitcher';
+// eslint-disable-next-line func-names
+const App = function () {
   //* react international lang  middleware
   const { t } = useTranslation();
 
