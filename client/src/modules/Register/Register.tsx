@@ -29,6 +29,9 @@ const Register = () => {
   });
   return (
     <section id="register-form">
+      <header>
+        <h1>Register</h1>
+      </header>
       <form onSubmit={formik.handleSubmit}>
         <input
           type="text"
