@@ -21,6 +21,7 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "import/no-unresolved": 0,
     "import/extensions": [
       "error",
       "ignorePackages",
@@ -47,7 +48,7 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": ["src"],
+        "paths": ["./src"],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     }

@@ -1,4 +1,3 @@
-/* eslint-disable import/no-unresolved */
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import Navigation from 'library/common/components/Toolbar/Navigation';
