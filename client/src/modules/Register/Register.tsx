@@ -33,10 +33,7 @@ const Register = () => {
         <input
           type="text"
           id="firstName"
-          name="firstName"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.firstName}
+          {...formik.getFieldProps('firstName')}
         />
         {formik.errors.firstName && formik.touched.firstName ? (
           <p className="error">{formik.errors.firstName}</p>
@@ -46,24 +43,14 @@ const Register = () => {
         <input
           type="text"
           id="lastName"
-          name="lastName"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.lastName}
+          {...formik.getFieldProps('lastName')}
         />
         {formik.errors.lastName && formik.touched.lastName ? (
           <p className="error">{formik.errors.lastName}</p>
         ) : null}
         <br />
 
-        <input
-          type="email"
-          id="email"
-          name="email"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.email}
-        />
+        <input type="email" id="email" {...formik.getFieldProps('email')} />
         {formik.errors.email && formik.touched.email ? (
           <p className="error">{formik.errors.email}</p>
         ) : null}
@@ -73,10 +60,7 @@ const Register = () => {
         <input
           type="password"
           id="password"
-          name="password"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.password}
+          {...formik.getFieldProps('password')}
         />
         {formik.errors.password && formik.touched.password ? (
           <p className="error">{formik.errors.password}</p>
