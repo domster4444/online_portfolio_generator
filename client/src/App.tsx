@@ -1,17 +1,22 @@
 import React from 'react';
-import { useTranslation } from 'react-i18next';
-import Navigation from 'library/common/components/Toolbar/Navigation';
-import LanguageSwitcher from './library/common/components/LanguageSwitcher';
+import { Routes, Route } from 'react-router-dom';
+import Home from 'modules/Home/Home';
 
-// eslint-disable-next-line func-names
-const App = function () {
-  //* react international lang  middleware
-  const { t } = useTranslation();
+import Navigation from 'library/common/components/Toolbar/Navigation';
+import LanguageSwitcher from 'library/common/components/LanguageSwitcher';
+import Login from 'modules/Login/Login';
+import Register from 'modules/Register/Register';
+
+const App = () => {
   return (
     <>
-      <Navigation />
       <LanguageSwitcher />
-      {t('loginRegisterPage.descritpionParagraph.firstLine')}
+      <Navigation />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+      </Routes>
     </>
   );
 };

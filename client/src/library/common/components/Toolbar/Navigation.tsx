@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -23,9 +24,14 @@ export default function Navigation() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            <Link to="/">Home Page</Link>
           </Typography>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit">
+            <Link to="/login">Login</Link>
+          </Button>
+          <Button color="inherit">
+            <Link to="/register">Register</Link>
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>
