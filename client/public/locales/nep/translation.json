@@ -1,0 +1,25 @@
+{
+  "loginRegisterPage": {
+    "digitalByapari": "डिजिटल व्यापारी",
+    "descritpionParagraph": {
+      "firstLine": "राम्रो लाइन वा भीड मा ",
+      "secondLine": "रहन को लागी। यो ",
+      "thirdLine": "नेपाल को अग्रणी मिनी बजार",
+      "fourthLine": "हो जहाँ तपाइँ लगभग",
+      "fifthLine": "कहीं बाट र तपाइँको वरपर ",
+      "sixthLine": "कुनै पसल बाट सामान किन्न सक्नुहुन्छ।"
+    },
+    "slogan": "एउटा क्लिक गर्नुहोस् र तपाइँको ढोकामा उत्पादनको ढोका",
+    "welcomeText": "नेपालको सबैभन्दा ठूलो अग्रणी अनलाइन डिजिटल मिनी बजार मा स्वागत छ",
+    "signinText": "साइन इन गर्नुहोस्",
+    "registerText": "खाता खोल्नुहोस्",
+    "loginField": {
+      "userNameField": "प्रयोगकर्ता नाम",
+      "passwordField": "पासवर्ड",
+      "rememberField": "प्रयोगकर्ता नाम र पासवर्ड याद गर्नुहोस्",
+      "loginBtnText": "लगइन",
+      "registerBtnText": "दर्ता गर्नुहोस्",
+      "forgotText": "प्रयोगकर्ता नाम वा पासवर्ड बिर्सनुभयो"
+    }
+  }
+}

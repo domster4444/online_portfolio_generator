@@ -1,0 +1,25 @@
+{
+  "loginRegisterPage": {
+    "digitalByapari": "Digital Byapari",
+    "descritpionParagraph": {
+      "firstLine": "GOODBYE to staying in line",
+      "secondLine": "or crowd.This is Nepal's",
+      "thirdLine": "leading mini market where",
+      "fourthLine": "you can buy goods from",
+      "fifthLine": "almost anywhere and from ",
+      "sixthLine": "any shops around you"
+    },
+    "slogan": "ONE CLICK AND THE PRODUCT KNOCKS AT YOUR DOOR",
+    "welcomeText": "Welcome to Nepal's biggest leading online digital mini market",
+    "signinText": "SIGN IN",
+    "registerText": "CREATE AN ACCOUNT",
+    "loginField": {
+      "userNameField": "User Name",
+      "passwordField": "Password",
+      "rememberField": "Remember username & password",
+      "loginBtnText": "Login",
+      "registerBtnText": "Register",
+      "forgotText": "Forgot username or password"
+    }
+  }
+}
