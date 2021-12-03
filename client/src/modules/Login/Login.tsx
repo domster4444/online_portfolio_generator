@@ -62,6 +62,10 @@ const Login = () => {
             <span className="sr-only">Loading...</span>
           </div>
         ) : null}
+
+        <a href="http://localhost:3000/passwordresetformemail">
+          reset password
+        </a>
       </form>
     </section>
   );

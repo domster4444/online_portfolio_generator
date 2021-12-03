@@ -21,6 +21,9 @@ export const sendNewPassword = createAsyncThunk(
       );
       return data;
     } catch (err) {
+      console.log(
+        'passwordResetPasswordSlice.js: err occured white sending post req to reset email '
+      );
       return rejectWithValue(err.response.data);
     }
   }
