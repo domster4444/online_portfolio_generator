@@ -3,9 +3,10 @@ const dotenv = require('dotenv');
 const crypto = require('crypto');
 const asyncHandler = require('express-async-handler');
 const User = require('../model/userModel');
-const sgMail = require('@sendgrid/mail');
+const sendEmail = require('../utils/sendEmail');
+// //const sgMail = require('@sendgrid/mail');
 dotenv.config();
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+//// sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 const router = express.Router();
 router.post(
   '/password/forgot',
@@ -19,20 +20,31 @@ router.post(
         message:
           'I just sent a message to the email you provided with a link to reset your password. Please check your inbox and follow the instructions in the email.',
       });
-      const passwordResetUrl = `http://${req.headers.host}/password/reset/${user.passwordResetToken}`;
-      const msg = {
-        to: user.email,
-        from: 'samrajyabasnyat64@gmail.com',
-        subject: 'Reset your password',
-        html: `<h1>Password Reset Instructions</h1>
-        <p>Click on the link below to reset your password for your account.</p>
-        <a style="font-weight:bold; font-size: 1rem" href=${passwordResetUrl}>Change my password</a>
-        <p>The link will expire in an hour.</p>
-        <p>Hemanta Sundaray</p>`,
-      };
+      //?reset link with prefix http:// req.header.host
+      //// const passwordResetUrl = `http://${req.headers.host}/password/reset/${user.passwordResetToken}`;
+      const passwordResetUrl = `http://localhost:3000/password/reset/${user.passwordResetToken}`;
+      //// const msg = {
+      ////   to: user.email,
+      ////   from: 'samrajyabasnyat64@gmail.com',
+      ////   subject: 'Reset your password',
+      ////   html: `<h1>Password Reset Instructions</h1>
+      ////   <p>Click on the link below to reset your password for your account.</p>
+      ////   <a style="font-weight:bold; font-size: 1rem" href=${passwordResetUrl}>Change my password</a>
+      ////   <p>The link will expire in an hour.</p>
+      ////   <p>Hemanta Sundaray</p>`,
+      //// };
+
+      const message = ` your reset email link ${passwordResetUrl}  `;
       (async () => {
         try {
-          await sgMail.send(msg);
+          //! smtp mail send
+          //// await sgMail.send(msg);
+
+          await sendEmail({
+            email: user.email,
+            subject: `App Password Recovery`,
+            message,
+          });
         } catch (error) {
           console.error(error);
           if (error.response) {
