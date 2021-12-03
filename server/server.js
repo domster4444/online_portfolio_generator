@@ -2,6 +2,7 @@ const express = require('express');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const globalErrorHandler = require('./middleware/errorMiddleware');
+const passwordResetRoutes = require('./routes/passwordResetRoutes');
 const userRoutes = require('./routes/userRoutes');
 const testRoutes = require('./routes/testRoute');
 const connectDB = require('./config/db');
@@ -16,6 +17,7 @@ app.use(express.json()); //? allow body parsing
 
 app.use('/api/users', userRoutes);
 app.use('/api/users', testRoutes);
+app.use('/account', passwordResetRoutes);
 
 //?global error handler
 app.use(globalErrorHandler);
