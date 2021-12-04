@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-wrap-multilines */
 import React from 'react';
-
 import { Routes, Route } from 'react-router-dom';
 import Home from 'modules/Home/Home';
 
@@ -11,6 +10,9 @@ import Register from 'modules/Register/Register';
 import Welcome from 'modules/Welcome/Welcome';
 import PasswordResetFormEmail from 'modules/PasswordResetFormEmail/PasswordResetFormEmail';
 import PasswordResetFormPassword from 'modules/PasswordResetFormPassword/PasswordResetFormPassword';
+
+// themes
+import FirstTheme from 'themes/1FirstTheme/FirstTheme';
 
 const App = () => {
   return (
@@ -31,6 +33,7 @@ const App = () => {
           // @ts-ignore
           element={<PasswordResetFormPassword />}
         />
+        <Route path="/first-theme" element={<FirstTheme />} />
       </Routes>
     </>
   );
