@@ -10,7 +10,7 @@ import Register from 'modules/Register/Register';
 import Welcome from 'modules/Welcome/Welcome';
 import PasswordResetFormEmail from 'modules/PasswordResetFormEmail/PasswordResetFormEmail';
 import PasswordResetFormPassword from 'modules/PasswordResetFormPassword/PasswordResetFormPassword';
-
+import Footer from 'library/common/components/Footer/Footer';
 // themes
 import FirstTheme from 'themes/1FirstTheme/FirstTheme';
 
@@ -35,6 +35,7 @@ const App = () => {
         />
         <Route path="/first-theme" element={<FirstTheme />} />
       </Routes>
+      <Footer />
     </>
   );
 };
