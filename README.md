@@ -60,4 +60,4 @@ Copyright © 2021 [Kshitiz Shah](https://github.com/domster4444).<br />
 This project is [MIT](https://github.com/domster4444/online_portfolio_generator/blob/main/LICENSE) licensed.
 
 ***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+
