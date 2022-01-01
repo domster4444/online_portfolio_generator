@@ -39,21 +39,31 @@ const io = socketIO(server);
 io.on('connection', (socket) => {
   //!_____io.on = our circuit [for establishing circuit]
   //? == after circuit is established
-  console.log('circuit established');
+  console.log('circuit established --serverTerminalMsg');
+
   //! message from admin after successful circuit establishment
-  //? == send message to client through socket, when circuit is established
-  socket.emit('welcome', { user: 'Admin', message: 'welcome to the chat' });
+  //? == send message to client through socket, when user Has Joined The Chat Room
+  socket.emit('welcome', {
+    user: 'Admin',
+    message: `welcome to the chat`,
+  });
+
   socket.on('joined', ({ myUser }) => {
     //!____ socket.on= our different user
     //? == after a user joins
     users[socket.id] = myUser;
-    console.log(`${myUser} has just joined the chat`);
+    console.log(`${myUser} has just joined the chat in --serverTerminalMsg`);
     //?socket.broadcast func is written inside socket.on('joinned') because this broadcast must only be done when some user joins
+
     //!broadcast that , a new user has joined the chat to other people except that new user
     socket.broadcast.emit('userJoined', {
       user: 'Admin',
       message: `${users[socket.id]} has just joined the chat`,
     });
+  });
+  //! user disconnects
+  socket.on('disconnect', () => {
+    console.log(`someone just left the chat`);
   });
 });
 

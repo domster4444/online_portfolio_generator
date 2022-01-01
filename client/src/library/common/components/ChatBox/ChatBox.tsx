@@ -56,9 +56,10 @@ const ChatBox = () => {
   // ?STATE
   const [name, setname] = useState('');
 
-  // ? SOCKET
   const socket = socketIO(ENDPOINT, { transports: ['websocket'] });
   useEffect(() => {
+    // ? SOCKET
+
     // !when circuit is established
     socket.on('connect', () => {
       console.log('connected to socket-server from client');
@@ -72,7 +73,10 @@ const ChatBox = () => {
       console.log(data.user, data.message);
     });
 
-    return () => {};
+    return () => {
+      socket.emit('disconnect');
+      socket.off();
+    };
   }, []);
   const joinUser = () => {
     socket.emit('joined', { myUser: name });
