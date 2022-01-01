@@ -7,8 +7,9 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import MenuIcon from '@mui/icons-material/Menu';
+
+import Drawer from 'library/common/components/Drawer/Drawer';
+import ProfileDrawer from 'library/common/components/ProfileDrawer/ProfileDrawer';
 
 // eslint-disable-next-line react/function-component-definition
 export default function Navigation() {
@@ -29,7 +30,7 @@ export default function Navigation() {
         <Toolbar>
           {loggedInUser ? (
             <div>
-              helo
+              <ProfileDrawer />
               {loggedInUser.firstName}
               <button
                 className="dropdown-item"
@@ -41,15 +42,8 @@ export default function Navigation() {
             </div>
           ) : (
             <>
-              <IconButton
-                size="large"
-                edge="start"
-                color="inherit"
-                aria-label="menu"
-                sx={{ mr: 2 }}
-              >
-                <MenuIcon />
-              </IconButton>
+              <Drawer />
+
               <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 <Link to="/">Home Page</Link>
               </Typography>
@@ -57,6 +51,7 @@ export default function Navigation() {
               <Button color="inherit">
                 <Link to="/login">Login</Link>
               </Button>
+
               <Button color="inherit">
                 <Link to="/register">Register</Link>
               </Button>

@@ -21,7 +21,8 @@
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@types/react-helmet": "^6.1.4",
-    "husky": "^7.0.4"
+    "husky": "^7.0.4",
+    "socket.io": "^4.4.0"
   },
   "dependencies": {
     "nodemailer": "^6.7.2"

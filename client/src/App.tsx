@@ -1,8 +1,13 @@
 /* eslint-disable react/jsx-wrap-multilines */
+
+// lib
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+
+// pages
 import Home from 'modules/Home/Home';
 
+// commons
 import Navigation from 'library/common/components/Toolbar/Navigation';
 import LanguageSwitcher from 'library/common/components/LanguageSwitcher';
 import Login from 'modules/Login/Login';
@@ -11,6 +16,8 @@ import Welcome from 'modules/Welcome/Welcome';
 import PasswordResetFormEmail from 'modules/PasswordResetFormEmail/PasswordResetFormEmail';
 import PasswordResetFormPassword from 'modules/PasswordResetFormPassword/PasswordResetFormPassword';
 import Footer from 'library/common/components/Footer/Footer';
+import ChatBox from 'library/common/components/ChatBox/ChatBox';
+
 // themes
 import FirstTheme from 'themes/1FirstTheme/FirstTheme';
 
@@ -36,6 +43,7 @@ const App = () => {
         <Route path="/first-theme" element={<FirstTheme />} />
       </Routes>
       <Footer />
+      <ChatBox />
     </>
   );
 };

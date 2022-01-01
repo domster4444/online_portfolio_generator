@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.7.0",
+    "@emotion/react": "^11.7.1",
     "@emotion/styled": "^11.6.0",
     "@formspree/react": "^2.2.4",
     "@mui/icons-material": "^5.2.0",
@@ -33,6 +33,9 @@
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.0.2",
     "react-scripts": "4.0.3",
+    "react-scroll-to-bottom": "^4.2.0",
+    "socket.io-client": "^4.4.0",
+    "styled-components": "^5.3.3",
     "typescript": "^4.5.2",
     "web-vitals": "^1.1.2",
     "yup": "^0.32.11"
@@ -64,6 +67,7 @@
   "devDependencies": {
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
+    "@types/styled-components": "^5.1.19",
     "@typescript-eslint/eslint-plugin": "^5.5.0",
     "@typescript-eslint/parser": "^5.5.0",
     "eslint": "^7.32.0",
