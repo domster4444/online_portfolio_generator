@@ -61,9 +61,19 @@ io.on('connection', (socket) => {
       message: `${users[socket.id]} has just joined the chat`,
     });
   });
+  //! on message get from client
+  socket.on('message', ({ message, id }) => {
+    io.emit('message', { user: users[id], message, id });
+  });
+
   //! user disconnects
   socket.on('disconnect', () => {
-    console.log(`someone just left the chat`);
+    //!broadcast that , a new user has left the chat to other people
+    socket.broadcast.emit('userLeft', {
+      user: 'Admin',
+      message: `${users[socket.id]} has left the chat`,
+    });
+    console.log(`${users[socket.id]} just left the chat`);
   });
 });
 
