@@ -2,14 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import socketIO from 'socket.io-client';
-// import { css } from '@emotion/react';
-// @ts-ignore
-// import ScrollToBottom from 'react-scroll-to-bottom';
-
-// const ROOT_CSS = css({
-//   height: 600,
-//   width: 400,
-// });
+import ScrollableFeed from 'react-scrollable-feed';
+import Message from 'library/common/components/ChatBox/Message/Message';
 
 const ENDPOINT = 'http://localhost:5000/';
 
@@ -23,19 +17,20 @@ const Chat = styled.section`
 const ChatBoxContent = styled.main`
   padding: 0.25rem;
   max-height: 10rem;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 `;
-const IncommingMessage = styled.div`
-  padding: 0.15rem;
-  background: lightgrey;
-  max-width: 20%;
-  transform: translateX(350%);
-`;
-const OutGoingMessage = styled.div`
-  padding: 0.15rem;
-  background: lightgrey;
-  max-width: 20%;
-`;
+// const IncommingMessage = styled.div`
+//   padding: 0.15rem;
+//   margin: 0.5rem 0rem;
+//   background: lightgrey;
+//   max-width: 20%;
+//   transform: translateX(350%);
+// `;
+// const OutGoingMessage = styled.div`
+//   padding: 0.15rem;
+//   background: lightgrey;
+//   max-width: 20%;
+// `;
 const ChatField = styled.input`
   width: 85%;
   font-size: 2rem;
@@ -52,24 +47,45 @@ const SendSection = styled.div`
   width: 100%;
   justify-content: space-between;
 `;
+const socket = socketIO(ENDPOINT, { transports: ['websocket'] });
+
+// ? TYPES
+type MessageObjTypes = {
+  message: string;
+  user: string;
+  classs: string;
+  id: string;
+};
+
 const ChatBox = () => {
   // ?STATE
   const [name, setname] = useState('');
-
-  const socket = socketIO(ENDPOINT, { transports: ['websocket'] });
+  const [id, setId] = useState('');
+  const [messageToSend, setMessageToSend] = useState('');
+  const [messages, setMessages] = useState([]);
   useEffect(() => {
     // ? SOCKET
-
     // !when circuit is established
     socket.on('connect', () => {
       console.log('connected to socket-server from client');
+      setId(socket.id);
     });
     //! message from admin after successful circuit establishment
     socket.on('welcome', (data) => {
+      // @ts-ignore
+      setMessages([...messages, data]);
       console.log(data.user, data.message);
     });
     // !broadcast that , a new user has joined the chat to all other people except that new user
     socket.on('userJoined', (data) => {
+      // @ts-ignore
+      setMessages([...messages, data]);
+      console.log(data.user, data.message);
+    });
+    //! broadcast that , a  user has left the chat to all other
+    socket.on('userLeft', (data) => {
+      // @ts-ignore
+      setMessages([...messages, data]);
       console.log(data.user, data.message);
     });
 
@@ -81,6 +97,29 @@ const ChatBox = () => {
   const joinUser = () => {
     socket.emit('joined', { myUser: name });
   };
+  // change state of message to send on change of input
+  const updateMessage = (e: any) => {
+    // @ts-ignore
+    setMessageToSend(e.target.value);
+  };
+  // send message to socket server
+  const sendMessage = () => {
+    //! send message to socket server
+    socket.emit('message', { message: messageToSend, id });
+  };
+
+  useEffect(() => {
+    socket.on('message', (data) => {
+      // @ts-ignore
+      setMessages([...messages, data]);
+      console.log(data.user);
+      console.log(data.message);
+      console.log(data.id);
+    });
+    return () => {
+      socket.off();
+    };
+  }, [messages]);
 
   return (
     <Chat>
@@ -102,45 +141,35 @@ const ChatBox = () => {
         <h1>Chat Box</h1>
       </header>
       <ChatBoxContent>
-        <IncommingMessage>
-          <div className="message__userName">
-            <span>Kshitiz </span>
-          </div>
-          <div className="message__text">
-            <p>Hello</p>
-          </div>
-        </IncommingMessage>
-
-        <OutGoingMessage>
-          <div className="message__userName">
-            <span>Kshitiz </span>
-          </div>
-          <div className="message__text">
-            <p>Hello</p>
-          </div>
-        </OutGoingMessage>
-        <IncommingMessage>
-          <div className="message__userName">
-            <span>Kshitiz</span>
-          </div>
-          <div className="message__text">
-            <p>Hello</p>
-          </div>
-        </IncommingMessage>
-
-        <OutGoingMessage>
-          <div className="message__userName">
-            <span>Kshitiz </span>
-          </div>
-          <div className="message__text">
-            <p>Hello</p>
-          </div>
-        </OutGoingMessage>
+        <ScrollableFeed>
+          {/* //todo: messageObj contains user,message,id  */}
+          {messages.map((messageObj: MessageObjTypes, index) => {
+            return (
+              // eslint-disable-next-line react/no-array-index-key
+              <div key={index}>
+                <Message
+                  user={messageObj.id === id ? 'You' : messageObj.user}
+                  message={messageObj.message}
+                  classs={messageObj.id === id ? 'right' : 'left'}
+                />
+              </div>
+            );
+          })}
+        </ScrollableFeed>
       </ChatBoxContent>
 
       <SendSection>
-        <ChatField type="text" />
-        <SendMessage>send</SendMessage>
+        <ChatField
+          type="text"
+          onChange={(e) => {
+            updateMessage(e);
+          }}
+          onKeyPress={(e) => {
+            // eslint-disable-next-line no-unused-expressions
+            e.key === 'Enter' ? sendMessage() : null;
+          }}
+        />
+        <SendMessage onClick={sendMessage}>send</SendMessage>
       </SendSection>
     </Chat>
   );
