@@ -5,7 +5,7 @@ import socketIO from 'socket.io-client';
 import ScrollableFeed from 'react-scrollable-feed';
 import Message from 'library/common/components/ChatBox/Message/Message';
 
-const ENDPOINT = 'http://localhost:5000/';
+const ENDPOINT = 'http://localhost:5005/';
 
 const Chat = styled.section`
   max-width: 75vw;

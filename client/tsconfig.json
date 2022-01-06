@@ -18,5 +18,8 @@
 
     "baseUrl": "src"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "rules": {
+    " linebreak-style": ["error", "windows"]
+  }
 }

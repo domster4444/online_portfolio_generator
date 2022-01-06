@@ -2,7 +2,7 @@ import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 
 const Footer = () => {
-  const [state, handleSubmit] = useForm('xqknzqwk');
+  const [state, handleSubmit] = useForm('xeqnonjr');
   if (state.succeeded) {
     return <p>Thank you, your feedback has been recorded</p>;
   }
