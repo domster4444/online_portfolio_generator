@@ -26,7 +26,15 @@ export default function SelectAutoWidth() {
 
   return (
     <div>
-      <FormControl sx={{ m: 1, minWidth: 80 }} style={{ width: '10rem' }}>
+      <FormControl
+        sx={{ m: 1, minWidth: 80 }}
+        style={{
+          width: '10rem',
+          position: 'relative',
+          marginLeft: '98%',
+          transform: 'translateX(-98%)',
+        }}
+      >
         <InputLabel
           id="demo-simple-select-outwith-label"
           style={{

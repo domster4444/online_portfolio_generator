@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
 import Drawer from 'library/common/components/Drawer/Drawer';
-import ProfileDrawer from 'library/common/components/ProfileDrawer/ProfileDrawer';
 
 // eslint-disable-next-line react/function-component-definition
 export default function Navigation() {
@@ -30,7 +29,6 @@ export default function Navigation() {
         <Toolbar>
           {loggedInUser ? (
             <div>
-              <ProfileDrawer />
               {loggedInUser.firstName}
               <button
                 className="dropdown-item"

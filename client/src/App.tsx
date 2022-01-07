@@ -1,8 +1,10 @@
 /* eslint-disable react/jsx-wrap-multilines */
 
 // lib
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { RootStateOrAny, useSelector } from 'react-redux';
 
 // pages
 import Home from 'modules/Home/Home';
@@ -22,6 +24,13 @@ import ChatBox from 'library/common/components/ChatBox/ChatBox';
 import FirstTheme from 'themes/1FirstTheme/FirstTheme';
 
 const App = () => {
+  const navigate = useNavigate();
+  const { loggedInUser } = useSelector((state: RootStateOrAny) => state.login);
+  useEffect(() => {
+    if (loggedInUser !== null) {
+      navigate('/welcome');
+    }
+  }, []);
   return (
     <>
       <LanguageSwitcher />

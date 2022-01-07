@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -23,8 +27,8 @@
         window.addEventListener('load', () => {
           navigator.serviceWorker
             .register('./serviceworker.js')
-            .then(reg => console.log('Success: ', reg.scope))
-            .catch(err => console.log('Failure: ', err));
+            .then((reg) => console.log('Success: ', reg.scope))
+            .catch((err) => console.log('Failure: ', err));
         });
       }
     </script>

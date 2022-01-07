@@ -1295,6 +1295,36 @@ button {
   }
 }
 
+@font-face {
+  font-family: 'poppins_thin';
+  src: url("./3-basics/fonts/Poppins/Poppins-Thin.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'poppins_extralight';
+  src: url("./3-basics/fonts/Poppins/Poppins-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'poppins_light';
+  src: url("./3-basics/fonts/Poppins/Poppins-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'poppins_regular';
+  src: url("./3-basics/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'poppins_medium';
+  src: url("./3-basics/fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'poppins_semibold';
+  src: url("./3-basics/fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
+}
+
 .flexContainer {
   display: flex;
   justify-content: center;
@@ -1441,4 +1471,34 @@ button {
 .pink {
   background-image: linear-gradient(40deg, #ff0c4b 0%, #ff2199 100%);
   box-shadow: 0px 10px 30px 0px rgba(255, 0, 90, 0.4);
+}
+
+.thin {
+  font-family: 'poppins_thin';
+  font-weight: 100;
+}
+
+.extralight {
+  font-family: 'poppins_extralight';
+  font-weight: 200;
+}
+
+.light {
+  font-family: 'poppins_light';
+  font-weight: 300;
+}
+
+.regular {
+  font-family: 'poppins_regular';
+  font-weight: 400;
+}
+
+.medium {
+  font-family: 'poppins_medium';
+  font-weight: 500;
+}
+
+.semibold {
+  font-family: 'poppins_semibold';
+  font-weight: 600;
 }

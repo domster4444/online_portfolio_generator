@@ -1,0 +1,6 @@
+thin
+extralight
+light
+regular 
+medium
+semibold
