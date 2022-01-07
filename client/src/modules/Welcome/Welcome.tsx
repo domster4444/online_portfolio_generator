@@ -6,6 +6,7 @@ import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 import './Welcome.css';
 
 // ?  components
+import BreadCrumb from 'library/common/components/BreadCrumb/BreadCrumb';
 import {
   GreenExploreCard,
   BlueExploreCard,
@@ -14,7 +15,9 @@ import {
 } from 'library/common/components/ExploreCards/ExploreCards';
 
 import './Drawer.css';
-import BarChart from 'library/common/components/Charts/BarChart/BarChart';
+import PolarChart from 'library/common/components/Charts/BarChart/PolarChart';
+import { DoughnutChart } from 'library/common/components/Charts/BarChart/DoughnutChart';
+import Header from 'library/common/components/Header/Header';
 
 const Welcome = () => {
   const navigate = useNavigate();
@@ -151,14 +154,84 @@ const Welcome = () => {
         <section className="home-section">
           <div className="text">
             Dashboard
+            <BreadCrumb />
             <section className="explore">
               <BlueExploreCard />
               <RedExploreCard />
               <GreenExploreCard />
               <PinkExploreCard />
             </section>
-            <section className="chart">
-              <BarChart />
+            <section className="chart__container">
+              <div className="chart__container__left">
+                <Header color="blue" />
+                <br />
+                <p className="light" style={{ fontSize: '1.6rem' }}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                  id dolor ducimus. Ullam cum dolorum corrupti possimus!
+                  Doloribus nobis labore odit consectetur quo facere id nihil
+                  non minus quae quasi officia minima, totam accusamus corporis
+                  sequi. Nostrum corrupti quam dicta veniam impedit quae unde
+                  atque maiores corporis, officia, ad explicabo.
+                </p>
+                <Header color="red" />
+                <br />
+                <p className="light" style={{ fontSize: '1.6rem' }}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                  id dolor ducimus. Ullam cum dolorum corrupti possimus!
+                  Doloribus nobis labore odit consectetur quo facere id nihil
+                  non minus quae quasi officia minima, totam accusamus corporis
+                  sequi. Nostrum corrupti quam dicta veniam impedit quae unde
+                  atque maiores corporis, officia, ad explicabo.
+                </p>
+                <Header color="green" />
+                <br />
+                <p className="light" style={{ fontSize: '1.6rem' }}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                  id dolor ducimus. Ullam cum dolorum corrupti possimus!
+                  Doloribus nobis labore odit consectetur quo facere id nihil
+                  non minus quae quasi officia minima, totam accusamus corporis
+                  sequi. Nostrum corrupti quam dicta veniam impedit quae unde
+                  atque maiores corporis, officia, ad explicabo.
+                </p>
+                <Header color="gold" />
+                <br />
+                <p className="light" style={{ fontSize: '1.6rem' }}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                  id dolor ducimus. Ullam cum dolorum corrupti possimus!
+                  Doloribus nobis labore odit consectetur quo facere id nihil
+                  non minus quae quasi officia minima, totam accusamus corporis
+                  sequi. Nostrum corrupti quam dicta veniam impedit quae unde
+                  atque maiores corporis, officia, ad explicabo.
+                </p>
+                <Header color="purple" />
+                <br />
+                <p className="light" style={{ fontSize: '1.6rem' }}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                  id dolor ducimus. Ullam cum dolorum corrupti possimus!
+                  Doloribus nobis labore odit consectetur quo facere id nihil
+                  non minus quae quasi officia minima, totam accusamus corporis
+                  sequi. Nostrum corrupti quam dicta veniam impedit quae unde
+                  atque maiores corporis, officia, ad explicabo.
+                </p>
+                <Header color="pink" />
+                <br />
+                <p className="light" style={{ fontSize: '1.6rem' }}>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit
+                  id dolor ducimus. Ullam cum dolorum corrupti possimus!
+                  Doloribus nobis labore odit consectetur quo facere id nihil
+                  non minus quae quasi officia minima, totam accusamus corporis
+                  sequi. Nostrum corrupti quam dicta veniam impedit quae unde
+                  atque maiores corporis, officia, ad explicabo.
+                </p>
+              </div>
+              <div className="chart__container__right">
+                <div className="upper__division">
+                  <PolarChart />
+                </div>
+                <div className="lower__division">
+                  <DoughnutChart />
+                </div>
+              </div>
             </section>
           </div>
         </section>
