@@ -1,0 +1,25 @@
+// *                    Recipies
+@mixin fullImage {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@mixin flexContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@mixin transition15 {
+  transition: all 0.15s ease-in-out 0s;
+}
+@mixin flex($a, $b) {
+  display: flex;
+  justify-content: $a;
+  align-items: $b;
+  flex-wrap: wrap;
+}
+
+@mixin boxShadow() {
+  box-shadow: 0px 0px 21px 1px #e7e5ff;
+}

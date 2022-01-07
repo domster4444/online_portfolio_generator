@@ -1,0 +1,44 @@
+//! how to use?
+
+// .cls {
+//     width: 800px;
+//     height: 500px;
+//     background: $primary_green;
+
+//     @include responsive_mobile() {
+//         width: 300;
+//         height: 200px;
+//     }
+
+//     @include responsive_tab() {
+//         width: 300;
+//         height: 200px;
+//     }
+
+//     @include responsive(350px, 1200px) {
+//         width: 3110;
+//         height: 200px;
+//     }
+// }
+// -------------------------including RESPONSIVE MIXINS end
+
+// mobile
+@mixin responsive_mobile() {
+  @media only screen and (max-width: 600px) {
+    @content;
+  }
+}
+//tablet
+@mixin responsive_tab() {
+  @media only screen and (max-width: 900px) {
+    @content;
+  }
+}
+
+// variables
+
+@mixin responsive($minWidth, $maxWidth) {
+  @media only screen and (min-width: $minWidth) and (max-width: $maxWidth) {
+    @content;
+  }
+}

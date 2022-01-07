@@ -1,0 +1,138 @@
+.flexContainer {
+  @include flexContainer;
+  flex-direction: row;
+}
+
+.containerCenter {
+  display: flex;
+
+  justify-content: center;
+}
+
+.contentBlock {
+  @include media('<=1351px') {
+    width: 90% !important;
+  }
+  @include media('<=958px') {
+    width: 95% !important;
+  }
+  display: flex;
+  width: 65% !important;
+}
+
+// buttons
+.blueBtn {
+  border: none;
+  border-radius: 0.4rem;
+  color: $primary_white;
+  background: linear-gradient(
+    45deg,
+    $primary_lightblue 0%,
+    $primary_blue 100%
+  ) !important;
+  height: 3.6rem;
+  width: 10rem;
+}
+
+.centerText {
+  text-align: center;
+}
+
+.dottedDesign {
+  top: 50vh;
+  position: absolute;
+  z-index: -1;
+}
+
+// ? --> energy beautiful multi color balls
+.iconContainer {
+  @include flex(center, center);
+  .circleStructure {
+    @include flex(center, center);
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+  }
+  .blueCircle {
+    box-shadow: 0px 10px 30px 0px rgba(44, 130, 237, 0.4);
+    @extend .circleStructure;
+    background-image: linear-gradient(40deg, #2c82ed 0%, #38d0fc 100%);
+  }
+  .redCircle {
+    box-shadow: 0px 10px 30px 0px rgba(255, 23, 23, 0.4);
+
+    @extend .circleStructure;
+    background-image: linear-gradient(40deg, #ff0000 0%, #ff5959 100%);
+  }
+  .greenCircle {
+    box-shadow: 0px 10px 30px 0px rgba(87, 178, 42, 0.4);
+    @extend .circleStructure;
+    background-image: linear-gradient(40deg, #57b22a 0%, #77ea3d 100%);
+  }
+  .purpleCircle {
+    box-shadow: 0px 10px 30px 0px rgba(74, 39, 205, 0.4);
+    @extend .circleStructure;
+    background-image: linear-gradient(40deg, #5038ff 0%, #868aff 100%);
+  }
+  .goldCircle {
+    box-shadow: 0px 10px 30px 0px rgba(255, 155, 18, 0.4);
+    @extend .circleStructure;
+    background-image: linear-gradient(-27deg, #ff8901 0%, #ffb21b 100%);
+  }
+  .goldCircle {
+    box-shadow: 0px 10px 30px 0px rgba(255, 155, 18, 0.4);
+    @extend .circleStructure;
+    background-image: linear-gradient(-27deg, #ff8901 0%, #ffb21b 100%);
+  }
+  .pinkCircle {
+    @extend .circleStructure;
+    background-image: linear-gradient(40deg, #ff0c4b 0%, #ff2199 100%);
+    box-shadow: 0px 10px 30px 0px rgba(255, 0, 90.00000000000013, 0.4);
+  }
+}
+//?box shadow
+.boxShadow {
+  box-shadow: 0px 0px 21px 1px #e7e5ff;
+}
+
+.leafCircle {
+  height: 6.7rem;
+  width: 6.9rem;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+
+.blue {
+  box-shadow: 0px 10px 30px 0px rgba(44, 130, 237, 0.4);
+  background-image: linear-gradient(40deg, #2c82ed 0%, #38d0fc 100%);
+}
+.red {
+  box-shadow: 0px 10px 30px 0px rgba(255, 23, 23, 0.4);
+
+  background-image: linear-gradient(40deg, #ff0000 0%, #ff5959 100%);
+}
+.green {
+  box-shadow: 0px 10px 30px 0px rgba(87, 178, 42, 0.4);
+
+  background-image: linear-gradient(40deg, #57b22a 0%, #77ea3d 100%);
+}
+.purple {
+  box-shadow: 0px 10px 30px 0px rgba(74, 39, 205, 0.4);
+
+  background-image: linear-gradient(40deg, #5038ff 0%, #868aff 100%);
+}
+.gold {
+  box-shadow: 0px 10px 30px 0px rgba(255, 155, 18, 0.4);
+
+  background-image: linear-gradient(-27deg, #ff8901 0%, #ffb21b 100%);
+}
+.gold {
+  box-shadow: 0px 10px 30px 0px rgba(255, 155, 18, 0.4);
+
+  background-image: linear-gradient(-27deg, #ff8901 0%, #ffb21b 100%);
+}
+.pink {
+  background-image: linear-gradient(40deg, #ff0c4b 0%, #ff2199 100%);
+  box-shadow: 0px 10px 30px 0px rgba(255, 0, 90.00000000000013, 0.4);
+}

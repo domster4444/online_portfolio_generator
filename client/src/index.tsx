@@ -8,6 +8,8 @@ import './library/utilities/i18next';
 
 import App from './App';
 
+import './scss/main.css';
+
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>

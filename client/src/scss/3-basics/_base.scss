@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+:root {
+  font-size: 10px;
+  @include media('<=1000') {
+    font-size: 9.5px;
+  }
+  @include media('<=800') {
+    font-size: 9px;
+  }
+  @include media('<=600') {
+    font-size: 8.5px;
+  }
+  @include media('<=400') {
+    font-size: 8px;
+  }
+  @include media('<=300') {
+    font-size: 8.5px;
+  }
+}
+.cursor {
+  cursor: pointer;
+}
+
+* {
+  user-select: none;
+}
+html {
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: white;
+}
+
+// !remove blue background in mobile screen
+* {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-highlight: none;
+}
+button,
+div {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-highlight: none;
+}
+a {
+  -webkit-tap-highlight-color: transparent !important;
+  -webkit-highlight: none;
+}
+::selection {
+  background-color: #f4cc25;
+  color: white;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  // background-position: center;
+  // background-size: cover;
+  // background-image: url(../img/generalImage/backgroundI.jpg);
+}
+
+button {
+  outline: none;
+}

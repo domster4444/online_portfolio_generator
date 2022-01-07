@@ -1,0 +1,108 @@
+// @keyframes animationOne{
+
+//     0% {
+//         transform: translateY(0px);
+//     }
+
+//     10% {
+//         transform: translateY(1px);
+//     }
+//     15% {
+//         transform: translateY(2px);
+//     }
+
+//     20% {
+//         transform: translateY(4px);
+//     }
+
+//     25% {
+//         transform: translateY(6px);
+//     }
+
+//     30% {
+//         transform: translateY(8px);
+//     }
+
+//     35% {
+//         transform: translateY(10px);
+//     }
+//     40% {
+//         transform: translateY(12px);
+//     }
+//     45% {
+//         transform: translateY(14px);
+//     }
+//     50% {
+//         transform: translateY(15px);
+//     }
+//     55% {
+//         transform: translateY(14px);
+//     }
+//     60% {
+//         transform: translateY(12px);
+//     }
+//     65% {
+//         transform: translateY(10px);
+//     }
+//     70% {
+//         transform: translateY(8px);
+//     }
+//     75% {
+//         transform: translateY(7px);
+//     }
+//     80% {
+//         transform: translateY(6px);
+//     }
+//     85% {
+//         transform: translateY(5px);
+//     }
+//     90% {
+//         transform: translateY(4px);
+//     }
+//     95% {
+//         transform: translateY(3px);
+//     }
+//     98% {
+//         transform: translateY(2px);
+//     }
+//     100% {
+//         transform: translateY(0px);
+//     }
+// }
+
+// #heroSectionPhoneImage,#girlInPhoneImage,#designIllustrator,#planningPhone{
+
+//     animation-name: animationOne;
+//     animation-duration: 3.8s;
+//     animation-iteration-count: infinite;
+//    transition:all  3.8s  ;
+// }
+
+// @keyframes animationOne{
+//     from{
+//         transform: translateX(0px);
+
+//     }
+//     to{
+// transform: translateX(200px);
+//     }
+// }
+
+// .cls{
+//     animation-name: animationOne;
+//    animation-duration: 3.8s;
+//     animation-iteration-count: infinite;
+//    transition:all  3.8s  ;
+// }
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}
