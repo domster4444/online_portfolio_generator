@@ -38,7 +38,6 @@ const App = () => {
     <>
       <LanguageSwitcher />
       <Navigation />
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
