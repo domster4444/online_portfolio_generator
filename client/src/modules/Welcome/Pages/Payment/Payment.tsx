@@ -2,9 +2,10 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
 import { RootStateOrAny, useSelector } from 'react-redux';
-import DashboardDrawer from 'library/common/components/DashboardDrawer/DashboardDrawer';
 
 // ?  components
+import DashboardDrawer from 'library/common/components/DashboardDrawer/DashboardDrawer';
+import PricingPlanSection from 'library/common/components/Pricing/PricingPlanSection';
 import BreadCrumb from 'library/common/components/BreadCrumb/BreadCrumb';
 import AccountMenu from 'library/common/components/AccountMenu/AccountMenu';
 
@@ -23,6 +24,9 @@ const Payment = () => {
             <AccountMenu />
             Payment
             <BreadCrumb />
+            <section className="pricing__plan">
+              <PricingPlanSection />
+            </section>
           </div>
         </section>
       </>

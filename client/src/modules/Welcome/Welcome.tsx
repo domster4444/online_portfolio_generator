@@ -18,7 +18,6 @@ import {
 import PolarChart from 'library/common/components/Charts/BarChart/PolarChart';
 import { DoughnutChart } from 'library/common/components/Charts/BarChart/DoughnutChart';
 import Header from 'library/common/components/Header/Header';
-import PricingPlanSection from 'library/common/components/Pricing/PricingPlanSection';
 import AccountMenu from 'library/common/components/AccountMenu/AccountMenu';
 
 const Welcome = () => {
@@ -115,9 +114,6 @@ const Welcome = () => {
             </section>
             <section className="horizontal__stepper">
               <HorizontalLinearStepper />
-            </section>
-            <section className="pricing__plan">
-              <PricingPlanSection />
             </section>
           </div>
         </section>
