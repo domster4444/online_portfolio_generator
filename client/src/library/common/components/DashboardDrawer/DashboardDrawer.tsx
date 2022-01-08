@@ -25,18 +25,28 @@ const DashboardDrawer = () => {
     localStorage.removeItem('loggedInUser');
     navigate('/');
   };
-
   if (loggedInUser != null) {
     console.log(loggedInUser);
 
     useEffect(() => {
+      function menuBtnChange() {
+        //  @ts-ignore
+        if (sidebar.classList.contains('open')) {
+          //  @ts-ignore
+          closeBtn.classList.replace('bx-menu', 'bx-menu-alt-right'); // replacing the iocns class
+        } else {
+          //  @ts-ignore
+          closeBtn.classList.replace('bx-menu-alt-right', 'bx-menu'); // replacing the iocns class
+        }
+      }
+
       const sidebar = document.querySelector('.sidebar');
-      const closeBtn = document.querySelector('#btn') as HTMLButtonElement;
+      const closeBtn = document.querySelector('#btn');
       const searchBtn = document.querySelector('.bx-search');
 
+      //  @ts-ignore
       closeBtn.addEventListener('click', () => {
         //  @ts-ignore
-
         sidebar.classList.toggle('open');
         menuBtnChange(); // calling the function(optional)
       });
@@ -50,14 +60,6 @@ const DashboardDrawer = () => {
       });
 
       // following are the code to change sidebar button(optional)
-      function menuBtnChange() {
-        //  @ts-ignore
-        if (sidebar.classList.contains('open')) {
-          closeBtn.classList.replace('bx-menu', 'bx-menu-alt-right'); // replacing the iocns class
-        } else {
-          closeBtn.classList.replace('bx-menu-alt-right', 'bx-menu'); // replacing the iocns class
-        }
-      }
     }, []);
     return (
       <div className="sidebar">
@@ -73,14 +75,14 @@ const DashboardDrawer = () => {
             <span className="tooltip">Search</span>
           </li>
           <li>
-            <Link to="https://google.com">
+            <Link to="/welcome">
               <i className="bx bx-grid-alt" />
               <span className="links_name">Dashboard</span>
             </Link>
             <span className="tooltip">Dashboard</span>
           </li>
           <li>
-            <Link to="/welcome/profile">
+            <Link to="/profile">
               <i className="bx bx-user" />
               <span className="links_name">Profile</span>
             </Link>
@@ -108,9 +110,9 @@ const DashboardDrawer = () => {
             <span className="tooltip">Files</span>
           </li>
           <li>
-            <Link to="https://google.com">
+            <Link to="/payment">
               <i className="bx bx-cart-alt" />
-              <span className="links_name">Order</span>
+              <span className="links_name">Payment</span>
             </Link>
             <span className="tooltip">Order</span>
           </li>

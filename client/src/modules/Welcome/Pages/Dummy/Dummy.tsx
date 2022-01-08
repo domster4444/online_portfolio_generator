@@ -7,7 +7,7 @@ import { RootStateOrAny, useSelector } from 'react-redux';
 import BreadCrumb from 'library/common/components/BreadCrumb/BreadCrumb';
 import AccountMenu from 'library/common/components/AccountMenu/AccountMenu';
 
-const Profile = () => {
+const Dummy = () => {
   const { loggedInUser } = useSelector((state: RootStateOrAny) => state.login);
   console.log(loggedInUser);
   if (loggedInUser != null) {
@@ -17,7 +17,7 @@ const Profile = () => {
       <section className="home-section">
         <div className="text">
           <AccountMenu />
-          Profile
+          Dashboard
           <BreadCrumb />
         </div>
       </section>
@@ -26,4 +26,4 @@ const Profile = () => {
   return <div className="display-3 text-center mt-5">Not logged in </div>;
 };
 
-export default Profile;
+export default Dummy;
