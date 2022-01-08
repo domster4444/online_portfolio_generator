@@ -6,6 +6,7 @@ import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 import './Welcome.css';
 
 // ?  components
+import HorizontalLinearStepper from 'library/common/components/Stepper/Stepper';
 import BreadCrumb from 'library/common/components/BreadCrumb/BreadCrumb';
 import {
   GreenExploreCard,
@@ -232,6 +233,9 @@ const Welcome = () => {
                   <DoughnutChart />
                 </div>
               </div>
+            </section>
+            <section>
+              <HorizontalLinearStepper />
             </section>
           </div>
         </section>
