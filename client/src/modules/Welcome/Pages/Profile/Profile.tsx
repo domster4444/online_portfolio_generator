@@ -2,6 +2,7 @@
 /* eslint-disable @typescript-eslint/no-use-before-define */
 import React from 'react';
 import { RootStateOrAny, useSelector } from 'react-redux';
+import DashboardDrawer from 'library/common/components/DashboardDrawer/DashboardDrawer';
 
 // ?  components
 import BreadCrumb from 'library/common/components/BreadCrumb/BreadCrumb';
@@ -14,13 +15,17 @@ const Profile = () => {
     console.log(loggedInUser);
 
     return (
-      <section className="home-section">
-        <div className="text">
-          <AccountMenu />
-          Profile
-          <BreadCrumb />
-        </div>
-      </section>
+      <>
+        <DashboardDrawer />
+
+        <section className="home-section">
+          <div className="text">
+            <AccountMenu />
+            Profile
+            <BreadCrumb />
+          </div>
+        </section>
+      </>
     );
   }
   return <div className="display-3 text-center mt-5">Not logged in </div>;

@@ -19,13 +19,12 @@ import Welcome from 'modules/Welcome/Welcome';
 import PasswordResetFormEmail from 'modules/PasswordResetFormEmail/PasswordResetFormEmail';
 import PasswordResetFormPassword from 'modules/PasswordResetFormPassword/PasswordResetFormPassword';
 import Footer from 'library/common/components/Footer/Footer';
-// import ChatBox from 'library/common/components/ChatBox/ChatBox';
+import ChatBox from 'library/common/components/ChatBox/ChatBox';
+import Profile from 'modules/Welcome/Pages/Profile/Profile';
+import Payment from 'modules/Welcome/Pages/Payment/Payment';
 
 // themes
 import FirstTheme from 'themes/1FirstTheme/FirstTheme';
-import DashboardDrawer from 'library/common/components/DashboardDrawer/DashboardDrawer';
-// import Profile from 'modules/Welcome/Pages/Profile/Profile';
-// import Payment from 'modules/Welcome/Pages/Payment/Payment';
 
 const App = () => {
   const navigate = useNavigate();
@@ -39,14 +38,14 @@ const App = () => {
     <>
       <LanguageSwitcher />
       <Navigation />
-      <DashboardDrawer />
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/welcome" element={<Welcome />} />
-        {/* <Route path="/profile" element={<Profile />} /> */}
-        {/* <Route path="/payment" element={<Payment />} /> */}
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/payment" element={<Payment />} />
         <Route
           path="/passwordresetformemail"
           element={<PasswordResetFormEmail />}
@@ -59,7 +58,7 @@ const App = () => {
         <Route path="/first-theme" element={<FirstTheme />} />
       </Routes>
       <Footer />
-      {/* <ChatBox /> */}
+      <ChatBox />
     </>
   );
 };
