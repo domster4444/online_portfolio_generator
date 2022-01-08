@@ -4,7 +4,10 @@
   "description": "<h1 align=\"center\">Welcome to Online Portfolio Generator 👋</h1>",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "chatserver": "cd chatServer && npm run chatserver",
+    "server": "cd server && npm run server",
+    "client": "cd client && npm start",
+    "all": "concurrently \"npm run chatserver\" \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -21,6 +24,7 @@
     "@commitlint/cli": "^15.0.0",
     "@commitlint/config-conventional": "^15.0.0",
     "@types/react-helmet": "^6.1.4",
+    "concurrently": "^7.0.0",
     "husky": "^7.0.4",
     "socket.io": "^4.4.0"
   },
