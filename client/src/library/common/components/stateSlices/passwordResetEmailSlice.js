@@ -13,7 +13,7 @@ export const sendPasswordResetEmail = createAsyncThunk(
   async (passwordResetEmail, { rejectWithValue }) => {
     try {
       const { data } = await axios.post(
-        'http://localhost:5000/account/password/forgot',
+        'http://localhost:5001/account/password/forgot',
         passwordResetEmail
       );
       return data;
