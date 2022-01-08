@@ -1,0 +1,22 @@
+.profile {
+  width: 85%;
+}
+
+.profile header h5 {
+  margin: 4rem 0rem 3rem 0rem;
+  color: grey;
+}
+
+.profile__imagecontainer {
+  margin: 1rem 0rem;
+  display: flex;
+  justify-content: center;
+}
+
+.profile__imagecontainer img {
+  overflow: hidden;
+  width: 20rem;
+  height: 20rem;
+  background-color: grey;
+  border-radius: 50%;
+}

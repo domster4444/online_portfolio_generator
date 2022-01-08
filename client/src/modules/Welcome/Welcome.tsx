@@ -33,7 +33,7 @@ const Welcome = () => {
           <div className="text">
             <AccountMenu />
             Dashboard
-            <BreadCrumb />
+            <BreadCrumb currentPath="welcome" />
             <section className="explore">
               <BlueExploreCard />
               <RedExploreCard />

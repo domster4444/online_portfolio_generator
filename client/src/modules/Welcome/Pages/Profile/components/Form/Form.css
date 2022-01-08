@@ -1,0 +1,21 @@
+.profileForm {
+  display: flex;
+  justify-content: center;
+}
+
+.profileForm__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 90rem;
+}
+
+.profileForm input {
+  background-color: #e4e9f7;
+  font-size: 1.6rem;
+}
+
+.profileForm .MuiInputLabel-formControl {
+  font-size: 1.8rem;
+}

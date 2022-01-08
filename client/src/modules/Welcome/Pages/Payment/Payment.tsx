@@ -23,7 +23,7 @@ const Payment = () => {
           <div className="text">
             <AccountMenu />
             Payment
-            <BreadCrumb />
+            <BreadCrumb currentPath="payment" />
             <section className="pricing__plan">
               <PricingPlanSection />
             </section>

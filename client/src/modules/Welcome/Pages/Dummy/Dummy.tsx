@@ -22,7 +22,7 @@ const Dummy = () => {
           <div className="text">
             <AccountMenu />
             Dummy
-            <BreadCrumb />
+            <BreadCrumb currentPath="dummy" />
           </div>
         </section>
       </>
