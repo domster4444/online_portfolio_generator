@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import EditMenu from 'library/common/components/EditMenu/EditMenu';
 
 const Icon = styled.i`
   margin: 1rem;
@@ -114,6 +115,7 @@ export const GreenExploreCard = () => {
     <GreenCard>
       <Icon className="bx bx-user" />
       <span className="regular">455</span>
+      <EditMenu />
     </GreenCard>
   );
 };
@@ -122,6 +124,7 @@ export const BlueExploreCard = () => {
     <BlueCard>
       <Icon className="bx bx-user" />
       <span className="regular">455</span>
+      <EditMenu />
     </BlueCard>
   );
 };
@@ -130,6 +133,7 @@ export const RedExploreCard = () => {
     <RedCard>
       <Icon className="bx bx-user" />
       <span className="regular">455</span>
+      <EditMenu />
     </RedCard>
   );
 };
@@ -138,6 +142,7 @@ export const PinkExploreCard = () => {
     <PinkCard>
       <Icon className="bx bx-user" />
       <span className="regular">455</span>
+      <EditMenu />
     </PinkCard>
   );
 };

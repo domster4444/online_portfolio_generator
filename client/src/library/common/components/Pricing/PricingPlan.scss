@@ -1,0 +1,122 @@
+#pricingPlanSection {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+
+  .contentBlock {
+  }
+
+  main {
+    text-align: center;
+    h2 {
+      color: rgb(82, 60, 220);
+      font-size: 1.6rem;
+    }
+
+    h1 {
+      color: black;
+      font-size: 3.7rem;
+    }
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @media only screen and (max-width: 1187px) {
+        flex-wrap: wrap;
+      }
+    }
+
+    .priceCard {
+      @media only screen and (max-width: 788px) {
+        width: 80%;
+      }
+
+      border-radius: 0.5rem;
+
+      padding: 3rem 6rem;
+      width: 36rem;
+      width: 34rem;
+      background: rgb(249, 249, 249);
+
+      margin: 0;
+      h1 {
+        margin-top: 1rem;
+        font-size: 3.5rem;
+      }
+
+      h2 {
+        margin-top: 2rem;
+        font-size: 1.8rem;
+      }
+
+      p {
+        line-height: 2.5rem;
+        margin-top: 4rem;
+        color: rgb(106, 124, 146);
+        font-size: 1.8rem;
+      }
+
+      button {
+        transition: all 200ms ease-in-out;
+        &:hover {
+          transition: all 100ms ease-in-out;
+
+          color: white;
+          background: rgb(82, 60, 220);
+        }
+
+        border-radius: 3rem;
+        background: transparent;
+        font-size: 1.6rem;
+        margin-top: 3rem;
+        border: 1px solid rgb(82, 60, 220);
+        color: rgb(82, 60, 220);
+
+        width: 15rem;
+        height: 5rem;
+      }
+    }
+    .centerPricingCard {
+      background-image: linear-gradient(
+        0deg,
+        #301cab 0%,
+        #4448d3 52%,
+        #5774fa 100%
+      );
+
+      padding: 9rem 2rem !important;
+
+      h1 {
+        color: white;
+      }
+
+      h2 {
+        color: white;
+      }
+
+      p {
+        color: white;
+      }
+
+      button {
+        transition: all 200ms ease-in-out;
+        &:hover {
+          transition: all 100ms ease-in-out;
+
+          color: rgb(82, 60, 220);
+          background: white;
+        }
+
+        border-radius: 3rem;
+
+        background: transparent;
+        font-size: 1.6rem;
+        margin-top: 3rem;
+        border: 1px solid white;
+        color: white;
+
+        width: 15rem;
+        height: 5rem;
+      }
+    }
+  }
+}

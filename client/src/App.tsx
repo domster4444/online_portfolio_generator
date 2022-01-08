@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-comment-textnodes */
 /* eslint-disable react/jsx-wrap-multilines */
 
 // lib
@@ -22,6 +23,8 @@ import ChatBox from 'library/common/components/ChatBox/ChatBox';
 
 // themes
 import FirstTheme from 'themes/1FirstTheme/FirstTheme';
+import DashboardDrawer from 'library/common/components/DashboardDrawer/DashboardDrawer';
+import Profile from 'modules/Welcome/Pages/Profile/Profile';
 
 const App = () => {
   const navigate = useNavigate();
@@ -35,11 +38,13 @@ const App = () => {
     <>
       <LanguageSwitcher />
       <Navigation />
+      <DashboardDrawer />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/welcome" element={<Welcome />} />
+        <Route path="/welcome/profile" element={<Profile />} />
         <Route
           path="/passwordresetformemail"
           element={<PasswordResetFormEmail />}
