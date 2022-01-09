@@ -20,8 +20,7 @@ app.get('/', (req, res) => {
   res.send('application server working fine');
 });
 
-//!___ Cloudinary route
-
+//!___ provide url to access the image by cloudinary
 // configure routes
 app.post('/api/upload', async (req, res) => {
   try {
@@ -55,7 +54,6 @@ app.post('/api/upload', async (req, res) => {
 //!___ Cloudinary route
 
 app.use('/api/users', userRoutes);
-app.use('/api/users', testRoutes);
 app.use('/account', passwordResetRoutes);
 
 //?global error handler

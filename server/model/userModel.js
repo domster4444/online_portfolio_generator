@@ -26,6 +26,9 @@ const userSchema = new mongoose.Schema({
   passwordResetExpires: {
     type: Date,
   },
+  url: {
+    type: String,
+  },
 });
 
 userSchema.methods.matchPassword = async function (incomingPassword) {

@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable @typescript-eslint/no-use-before-define */
 /* eslint-disable no-unused-vars */
 
@@ -12,6 +13,8 @@ import { registerUser } from 'library/common/components/stateSlices/registerSlic
 import './UploadImg.css';
 
 const Register = () => {
+  const [urlState, setUrlState] = useState('');
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { status, userRegistered, error } = useSelector(
@@ -24,6 +27,7 @@ const Register = () => {
       lastName: '',
       email: '',
       password: '',
+      url: urlState,
     },
     validationSchema: Yup.object({
       firstName: Yup.string()
@@ -39,11 +43,13 @@ const Register = () => {
     }),
 
     onSubmit: async (values) => {
-      await submitImg();
       // @ts-ignore: Unreachable code error
-      await dispatch(registerUser(values));
-
-      alert('register btn clicked');
+      // eslint-disable-next-line no-param-reassign
+      const formData = values;
+      formData.url = urlState;
+      // @ts-ignore
+      dispatch(registerUser(formData));
+      console.log('formik value on form submmit', formData);
     },
   });
 
@@ -79,7 +85,8 @@ const Register = () => {
   };
 
   // ===
-  const submitImg = () => {
+  const submitImg = (e: any) => {
+    e.preventDefault();
     console.log('submitImg function invoked');
     if (!previewSource) return;
     uploadImage(previewSource);
@@ -97,6 +104,8 @@ const Register = () => {
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
+          console.log(data.result.secure_url);
+          setUrlState(data.result.secure_url);
 
           console.warn('image submitted successfully');
           setSuccessMsg('Image uploaded successfully');
@@ -112,6 +121,7 @@ const Register = () => {
 
   return (
     <section id="register-form">
+      <h3>{urlState}</h3>
       <header>
         <h1>Register</h1>
       </header>
@@ -153,7 +163,6 @@ const Register = () => {
           <p className="error">{formik.errors.password}</p>
         ) : null}
         <br />
-
         <div className="upload">
           <label htmlFor="file_id">
             Your File:
@@ -174,6 +183,13 @@ const Register = () => {
             />
           )}
         </div>
+        <button
+          onClick={(e) => {
+            submitImg(e);
+          }}
+        >
+          upload Image
+        </button>
 
         <button type="submit">Register</button>
         {status === 'loading' ? (

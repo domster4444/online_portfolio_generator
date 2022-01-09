@@ -8,7 +8,7 @@ const router = express.Router();
 router.post(
   '/register',
   asyncHandler(async (req, res, next) => {
-    const { firstName, lastName, email, password } = req.body;
+    const { firstName, lastName, email, password, url } = req.body;
     const userExists = await User.findOne({ email });
     if (userExists) {
       const err = new Error('User already registered');
@@ -20,6 +20,7 @@ router.post(
       lastName,
       email,
       password,
+      url,
     });
     res.json({ message: 'New user created' });
   })
