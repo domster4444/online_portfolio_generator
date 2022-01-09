@@ -1,10 +1,15 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/no-use-before-define */
+/* eslint-disable no-unused-vars */
+
+import React, { useState } from 'react';
+import { HexBase64BinaryEncoding } from 'crypto';
 import { useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 
 import * as Yup from 'yup';
 import { RootStateOrAny, useDispatch, useSelector } from 'react-redux';
 import { registerUser } from 'library/common/components/stateSlices/registerSlice';
+import './UploadImg.css';
 
 const Register = () => {
   const navigate = useNavigate();
@@ -33,15 +38,77 @@ const Register = () => {
         .required('Required'),
     }),
 
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
+      await submitImg();
       // @ts-ignore: Unreachable code error
-      dispatch(registerUser(values));
+      await dispatch(registerUser(values));
+
+      alert('register btn clicked');
     },
   });
 
   if (userRegistered) {
     navigate('/login');
   }
+
+  // ! image upload req .
+  const [fileInputState, setFileInputState] = useState('');
+  const [selectedFile, setSelectedFile] = useState('');
+  const [previewSource, setPreviewSource] = useState();
+  const [successMsg, setSuccessMsg] = useState('');
+  const [errMsg, setErrMsg] = useState('');
+  const changeHandler = (e: any) => {
+    // for singleFileUpload the file will be in 0th index
+    //* store file in variable
+    const file = e.target.files[0];
+
+    previewFile(file);
+  };
+  const previewFile = (file: any) => {
+    // FileReader is builtIn Js object class
+    //* create instance of FileReader to convert our image to base64String
+    const reader = new FileReader();
+    // *convert file to base64String using js object class "FielsReader"
+    reader.readAsDataURL(file);
+    //* when file is converted to base64String, call the onload function
+    reader.onloadend = () => {
+      //* set the previewSource to the base64String
+      // @ts-ignore
+      setPreviewSource(reader.result);
+    };
+  };
+
+  // ===
+  const submitImg = () => {
+    console.log('submitImg function invoked');
+    if (!previewSource) return;
+    uploadImage(previewSource);
+  };
+
+  const uploadImage = async (base64EncodedImage: HexBase64BinaryEncoding) => {
+    console.log(`uploadImage${base64EncodedImage}`);
+    try {
+      console.log('try catch block of fetch');
+      await fetch('http://localhost:5001/api/upload', {
+        method: 'POST',
+        body: JSON.stringify({ data: base64EncodedImage }),
+        headers: { 'Content-Type': 'application/json' },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+
+          console.warn('image submitted successfully');
+          setSuccessMsg('Image uploaded successfully');
+        });
+      setFileInputState('');
+      // @ts-ignore
+      setPreviewSource('');
+    } catch (err) {
+      console.error(err);
+      setErrMsg('Something went wrong!');
+    }
+  };
 
   return (
     <section id="register-form">
@@ -86,6 +153,28 @@ const Register = () => {
           <p className="error">{formik.errors.password}</p>
         ) : null}
         <br />
+
+        <div className="upload">
+          <label htmlFor="file_id">
+            Your File:
+            <input
+              id="file_id"
+              type="file"
+              name="image"
+              value={fileInputState}
+              onChange={changeHandler}
+            />
+          </label>
+
+          {previewSource && (
+            <img
+              className="upload__preview"
+              src={previewSource}
+              alt="preview"
+            />
+          )}
+        </div>
+
         <button type="submit">Register</button>
         {status === 'loading' ? (
           <div className="spinner-border text-light" role="status">

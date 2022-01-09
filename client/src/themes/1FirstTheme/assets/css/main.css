@@ -1,9 +1,9 @@
-@import url('fontawesome-all.min.css');
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,400italic,700,800');
+@import url("fontawesome-all.min.css");
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,400italic,700,800");
 /*
-	Highlights by body5 UP
-	body5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (body5up.net/license)
+	Highlights by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 #first-theme-main {
   /* Basic */
@@ -31,7 +31,7 @@
   /* XSmall */
 }
 
-#first-theme-main body,
+#first-theme-main html,
 #first-theme-main body,
 #first-theme-main div,
 #first-theme-main span,
@@ -181,7 +181,7 @@
   appearance: none;
 }
 
-#first-theme-main body {
+#first-theme-main html {
   box-sizing: border-box;
 }
 
@@ -191,28 +191,28 @@
   box-sizing: inherit;
 }
 
-#first-theme-main body {
+#first-theme-main html {
   background-color: #313a3d;
   background-attachment: fixed, fixed;
-  background-image: url('images/overlay.png'), url('../../images/bg.jpg');
+  background-image: url("images/overlay.png"), url("../../images/bg.jpg");
   background-position: top left, center center;
   background-repeat: repeat, none;
   background-size: auto, cover;
 }
 
-#first-theme-main body.is-preload *,
-#first-theme-main body.is-preload *:before,
-#first-theme-main body.is-preload *:after {
+#first-theme-main html.is-preload *,
+#first-theme-main html.is-preload *:before,
+#first-theme-main html.is-preload *:after {
   animation: none !important;
   transition: none !important;
 }
 
-#first-theme-main body.is-touch {
+#first-theme-main html.is-touch {
   height: 100vh;
   overflow: hidden;
 }
 
-#first-theme-main body.is-touch #wrapper {
+#first-theme-main html.is-touch #wrapper {
   -webkit-backface-visibility: hidden;
   -webkit-overflow-scrolling: touch;
   -webkit-transform: translate3d(0, 0, 0);
@@ -1454,11 +1454,11 @@
   }
 }
 
-#first-theme-main body body {
+#first-theme-main html body {
   text-decoration: none;
 }
 
-#first-theme-main body body:before {
+#first-theme-main html body:before {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
@@ -1471,9 +1471,8 @@
   font-weight: 900;
 }
 
-#first-theme-main body body:before {
-  animation: spinner-show 1.5s 1 0.25s ease forwards,
-    spinner-hide 0.25s ease-in-out forwards !important;
+#first-theme-main html body:before {
+  animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-hide 0.25s ease-in-out forwards !important;
   transform-origin: 50% 50%;
   color: #464e50;
   content: '\f1ce';
@@ -1492,7 +1491,7 @@
   z-index: -1;
 }
 
-#first-theme-main body body:after {
+#first-theme-main html body:after {
   animation: overlay-hide 1s ease-in forwards !important;
   background: #313a3d;
   content: '';
@@ -1506,20 +1505,19 @@
   z-index: -1;
 }
 
-#first-theme-main body.is-preload body:before {
-  animation: spinner-show 1.5s 1 0.25s ease forwards,
-    spinner-rotate 0.75s infinite linear !important;
+#first-theme-main html.is-preload body:before {
+  animation: spinner-show 1.5s 1 0.25s ease forwards, spinner-rotate 0.75s infinite linear !important;
   z-index: 10001;
 }
 
-#first-theme-main body.is-preload body:after {
+#first-theme-main html.is-preload body:after {
   animation: none !important;
   opacity: 1;
   z-index: 10000;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2) {
-  #first-theme-main body body:before {
+  #first-theme-main html body:before {
     line-height: 2.025em;
   }
 }
@@ -1823,7 +1821,7 @@
 }
 
 #first-theme-main .image:before {
-  background: url('images/overlay.png');
+  background: url("images/overlay.png");
   content: '';
   display: block;
   height: 100%;
@@ -2318,7 +2316,7 @@
 #first-theme-main .main .goto-next {
   transition: background-color 0.2s ease-in-out;
   background-color: rgba(144, 144, 144, 0.075);
-  background-image: url('images/arrow.svg');
+  background-image: url("images/arrow.svg");
   background-position: center center;
   background-repeat: no-repeat;
   border-radius: 100%;
@@ -2576,7 +2574,7 @@
     /* Main */
     /* Footer */
   }
-  #first-theme-main body,
+  #first-theme-main html,
   #first-theme-main body {
     min-width: 320px;
   }
